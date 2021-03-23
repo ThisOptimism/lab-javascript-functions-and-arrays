@@ -1,18 +1,52 @@
 // Iteration #1: Find the maximum
-
+const maxOfTwoNumbers = (a, b) => {
+  if (a > b) {
+    return a
+  } else if (a < b) {
+    return b
+  } else {
+    return a
+  }
+}
 // Iteration #2: Find longest word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
+const findLongestWord = (arr) => {
+  let longestWord = '';
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].length > longestWord.length) {
+      longestWord = arr[i]
+    }
+  }
+  return longestWord || null;
+};
 
 // Iteration #3: Calculate the sum
 
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
+const sumNumbers = (array) => {
+  return array.reduce((pv, cv) => pv + cv, 0);
+}
+
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
+const averageNumbers = (array) => {
+  let sum = 0;
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i]
+  }
+  return sum / array.length || null;
+}
+
+
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
+
+const averageWordLength = (arr) => {
+  return arr.join('').length / arr.length || null;
+}
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
@@ -29,8 +63,28 @@ const wordsUnique = [
   'bring'
 ];
 
+const uniquifyArray = (a) => {
+  if (a.length === 0) {
+    return null;
+  } else {
+    return a.filter((item, i, arr) => arr.indexOf(item) === i);
+  }
+}
+
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
+
+const doesWordExist = (arr, word) => {
+  if (arr.length === 0) {
+    return null;
+  } else {
+    if (arr.includes(word)) {
+      return true
+    } else {
+      return false
+    }
+  }
+}
 
 // Iteration #7: Count repetition
 const wordsCount = [
@@ -46,6 +100,17 @@ const wordsCount = [
   'disobedience',
   'matter'
 ];
+
+const howManyTimes = (arr, word) => {
+  let number = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].includes(word)) {
+      number++
+    }
+  }
+  return number;
+}
+
 
 // Iteration #8: Bonus
 
